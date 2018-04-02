@@ -1,0 +1,68 @@
+<!doctype html>
+<html amp lang="en">
+    <!--'Head' and 'Body' = Optional in HTML but not in AMP. CSS boilerplate to initially hide the content until AMP JS is loaded.-->
+  <head>
+    <meta charset="utf-8">
+    <!--Includes and loads the AMP JS library-->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+    <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+    <title>AMP Demo</title>
+    <!--Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists-->
+    <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
+    <!--responsive view port-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /* any custom style goes here */
+        body {
+            background-color: white;
+            padding: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid grey;
+            padding: 10px;
+            color: grey;
+        }
+        amp-img {
+            background-color: gray;
+            border: 1px groove teal;
+            border-radius: 75px;
+            width: 100%;
+            height: auto;
+        }
+    </style> 
+</head>
+  <body>
+    <h1>Welcome to the mobile web</h1>
+    <h2>Amp Img</h2>
+    <amp-img width="800" height="400"
+        layout="responsive" 
+        src="assets/welcome.jpg" 
+        alt="Welcome">
+    </amp-img>
+    <h2>Amp Twitter</h2>
+    <amp-twitter width="500" height="583"
+        layout="responsive"
+        data-tweetid="971038816726405120">
+    </amp-twitter>
+    <h2>Amp FaceBook</h2>
+    <amp-facebook width="476" height="316"
+        layout="responsive"
+        data-embed-as="video"
+        data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+    </amp-facebook>
+  </body>
+</html>
