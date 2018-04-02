@@ -7,6 +7,9 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
     <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <title>AMP Demo</title>
     <!--Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists-->
     <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
@@ -40,8 +43,11 @@
             background-color: gray;
             border: 1px groove teal;
             border-radius: 75px;
-            width: 100%;
-            height: auto;
+        }
+        .color__options{
+            height: 200px;
+            width: auto;
+            background-color: red;
         }
     </style> 
 </head>
@@ -64,5 +70,36 @@
         data-embed-as="video"
         data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
     </amp-facebook>
+    <div class="m1">
+        <amp-state id="allProducts"
+            src="/json/related_products.json"></amp-state>
+        <h3>Select your favourite color</h3>
+        <select class="mt1 ampstart-input"
+            on="change:AMP.setState({filteredProducts: allProducts.items.filter(a => event.value == 'all' ? true : a.color == event.value)})">
+            <option value="all"
+            selected="">All</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+            <option value="orange">orange</option>
+        </select>
+        <amp-list credentials="include"
+            width="auto"
+            height="372"
+            [height]="(40 + 24)*filteredProducts.length"
+            layout="fixed-height"
+            src="/json/related_products.json"
+            [src]="filteredProducts">
+            <template type="amp-mustache">
+            <amp-img src="{{img}}"
+                class="mt1 color__options"
+                layout="fixed"
+                width="60"
+                height="40"
+                alt="{{name}}"></amp-img>
+            {{name}}
+            </template>
+        </amp-list>
+     </div>
   </body>
 </html>

@@ -1,0 +1,22 @@
+[
+    { 
+        "img": "https://dingo.care2.com/pictures/greenliving/1143/1142992.large.jpg",
+        "color": "yellow",
+        "name": "banana"   
+    },
+    {
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91JaPLXvAvL._SX355_.jpg",
+        "color": "green",
+        "name": "starburst"  
+    },
+    { 
+        "img": "https://dingo.care2.com/pictures/greenliving/1143/1142992.large.jpg",
+        "color": "yellow",
+        "name": "banana"   
+    },
+    {
+        "img": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Color_icon_orange_v2.svg",
+        "color": "orange",
+        "name": "orange"  
+    }
+]
